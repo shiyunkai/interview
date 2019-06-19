@@ -1,26 +1,13 @@
 package com.interview.adv;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @Auther: shiyunkai
- * @Date: 2019/06/18 15:39
+ * @Date: 2019/06/19 17:36
  * @Description:
  */
 public class Test {
-
     public static void main(String[] args) {
-        StringBuffer str = new StringBuffer("we are you");
-        String strCopy = str.toString();
-        System.out.println(str);
-        String rep = "%20";
-        List<Integer> indexs = new ArrayList<>();
-        for(int i=0;i<str.length();i++){
-            if(str.charAt(i) == ' '){
-                indexs.add(i);
-            }
-        }
-        System.out.println(str);
+        Solution solution = new Solution();
+        TreeNode treeNode = solution.reConstructBinaryTree(new int[]{1, 2, 4, 7, 3, 5, 6, 8}, new int[]{4, 7, 2, 1, 5, 3, 8, 6});
     }
 }
