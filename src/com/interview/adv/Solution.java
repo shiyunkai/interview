@@ -7,6 +7,9 @@ package com.interview.adv;
  */
 public class Solution {
     public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
+        if(pre.length == 0 || in.length==0){
+            return null;
+        }
         // 根元素
         int rootVal = pre[0];
         // 找到中序遍历中的根结点位置
@@ -57,12 +60,12 @@ public class Solution {
         if (type == 0) {
             childPre = new int[rootIndex];
             for (int i = 1; i <= rootIndex; i++) {
-                childPre[i] = pre[i];
+                childPre[i-1] = pre[i];
             }
         } else {
             childPre = new int[pre.length - rootIndex - 1];
             for (int i = rootIndex + 1; i <= pre.length; i++) {
-                childPre[i] = pre[i];
+                childPre[i-rootIndex-1] = pre[i];
             }
         }
         return childPre;
