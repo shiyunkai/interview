@@ -32,7 +32,9 @@ public class Test {
         //int count3 = solution.NumberOf3(7);
         //System.out.println("二进制中1的个数为："+count3);
 
-        double power = solution.Power(3.0, -2);
-        System.out.println(power);
+        double power = solution.Power(-2, -2);
+        double pow = Math.pow(-2, -2);
+        long ll = 10;
+        System.out.println(String.format("%f, %f, %d",power,pow,10));
     }
 }

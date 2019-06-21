@@ -134,8 +134,8 @@ public class Solution {
 
     // 求base的 exponent次方
     public double Power(double base, int exponent) {
-        if (base <= 0 || base == 1) {
-            throw new RuntimeException("基数必须大于0，且不等于1");
+        if (base == 0 || base == 1) {
+            return base;
         }
         if (exponent == 0) {
             return 1d;
