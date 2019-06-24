@@ -87,7 +87,8 @@ public class SortAlgorithm {
     }
 
     /**
-     *  插入排序
+     * 插入排序
+     *
      * @param arr
      * @return
      */
@@ -110,14 +111,41 @@ public class SortAlgorithm {
         for (int i = 1; i < n; ++i) {
             int value = arr[i];
             int j = 0;//插入的位置
-            for (j = i-1; j >= 0; j--) {
+            for (j = i - 1; j >= 0; j--) {
                 if (arr[j] > value) {
-                    arr[j+1] = arr[j];//移动数据
+                    arr[j + 1] = arr[j];//移动数据
                 } else {
                     break;
                 }
             }
-            arr[j+1] = value; //插入数据
+            arr[j + 1] = value; //插入数据
+        }
+        return arr;
+    }
+
+    /**
+     * 希尔排序
+     *
+     * @param arr
+     * @return
+     */
+    public static int[] shellSort(int[] arr) {
+        int n = arr.length;
+        // 初始步长
+        int gap = n / 2;
+        while (gap > 0) {
+            // 按步长进行插入排序
+            for (int i = gap; i < n; i++) {
+                // 跨区间插入排序
+                for (int j = i; j - gap >= 0; j -= gap) {
+                    if (arr[j] < arr[j - gap]) {
+                        int temp = arr[j];
+                        arr[j] = arr[j - gap];
+                        arr[j - gap] = temp;
+                    }
+                }
+            }
+            gap /= 2;
         }
         return arr;
     }
